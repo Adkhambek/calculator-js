@@ -11,8 +11,10 @@ let operArr = ['+', '-', 'mod', '*', '÷', '+/-'];
 let operMinusArr = ['+', 'mod', '*', '÷', '+/-'];
 numbers.forEach(value => {
     value.addEventListener('click', () => {
-        //when adding multiple "." to the number
-        if (value.textContent == '.' && numberToString.includes('.')) return;
+        //when adding multiple "." to the number for the first number
+        if (value.textContent == '.' && numberToString.includes('.') && operationToString =='') return;
+        //for the second number
+        if (value.textContent == '.' && numberToString.includes('.') && operationToString !== '') return;
         //when adding another input number to the result, result will be removed
         if(testResult !== '' && testResult == numberToString) numberToString = '';
         //when input of first number is '.' it returns '0.';
